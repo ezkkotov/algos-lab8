@@ -88,20 +88,22 @@ volleyball_players = {"Jack", "Hugh", "Peter", "Sam"}
 basketball_players = {"Eve", "Richard", "Jessica", "Sam", "Michael"}
 
 
-
-
-
-
 ### Задача 6: Подсчёт голосов  
 Результаты опроса о любимом языке программирования:  
 ```python
 poll_results = ["Python", "Java", "Javascript", "Python", "Javascript", "Python", "C", "Python", "Python", "C", "Javascript"]
 ```  
 Используя словарь, подсчитайте количество голосов за каждый язык.  
+poll_results = ["Python", "Java", "Javascript", "Python", "Javascript", "Python", "C", "Python", "Python", "C", "Javascript"]
 
+vote_count = {}
+for language in poll_results:
+    if language in vote_count:
+        vote_count[language] += 1
+    else:
+        vote_count [language]  = 1
 
-
-
+print (vote_count)
 
 ### Задача 7: Подсчёт очков  
 Три друга играют в игру, где каждый игрок зарабатывает очки в трёх раундах. Их результаты:  
@@ -109,8 +111,20 @@ poll_results = ["Python", "Java", "Javascript", "Python", "Javascript", "Python"
 scores = [('Mike', 10), ('Mike', 8), ('Mike', 6), ('John', 7), ('John', 8), ('John', 5), ('Tom', 8), ('Tom', 9), ('Tom', 8)]
 ```  
 Создайте словарь, где ключами будут имена игроков, а значениями — их суммарные очки.  
+scores = [('Mike', 10), ('Mike', 8), ('Mike', 6), ('John', 7), ('John', 8), ('John', 5), ('Tom', 8), ('Tom', 9), ('Tom', 8)]
+total_scores = {}
+
+for name, score in scores:
+
+    if name in total_scores:
+        total_scores[name] += score
+    else:
+        total_scores[name] = score
+
+print(total_scores)
 
 ---
+
 
 ### Задача 8: Статистика списка  
 Дан список чисел:  
@@ -118,6 +132,13 @@ scores = [('Mike', 10), ('Mike', 8), ('Mike', 6), ('John', 7), ('John', 8), ('Jo
 numbers = [10, 3, 5, 9, 18, 3, 0, 7]
 ```  
 Напишите функцию, которая возвращает максимальное значение, сумму и среднее арифметическое чисел в списке.  
+numbers = [10, 3, 5, 9, 18, 3, 0, 7]
+max_value = max(numbers)
+total_sum = sum(numbers)
+average = total_sum / len(numbers)
+print(f"максимальное значение: {max_value}")
+print(f"сумма: {total_sum}")
+print(f"среднее арифмитическое: {average}")
 
 ---
 
@@ -127,7 +148,11 @@ numbers = [10, 3, 5, 9, 18, 3, 0, 7]
 word_list = ["apple", "airplane", "carrot", "elephant", "guitar", "moonlight"]
 ```  
 Напишите программу, которая определяет самое длинное и самое короткое слово в списке.  
-
+word_list = ["apple", "airplane", "carrot", "elephant", "guitar", "moonlight"]
+longest_word = max(word_list, key=len)
+shorted_word = min(word_list, key=len)
+print(f"самое длинное слово: {longest_word}")
+print(f"самое короткое слово: {shorted_word}")
 ---
 
 ### Задача 10: Фильтрация по частоте  
@@ -136,6 +161,9 @@ word_list = ["apple", "airplane", "carrot", "elephant", "guitar", "moonlight"]
 number_list = [5, 8, 2, 7, 3, 5, 6, 9, 2, 4, 8, 7, 1, 5, 3]
 ```  
 Создайте новый список, содержащий только числа, которые встречаются в оригинальном списке не менее трёх раз.  
+number_list = [5, 8, 2, 7, 3, 5, 6, 9, 2, 4, 8, 7, 1, 5, 3]
+
+
 
 ---
 
@@ -145,6 +173,9 @@ number_list = [5, 8, 2, 7, 3, 5, 6, 9, 2, 4, 8, 7, 1, 5, 3]
 exam_results = [23, 78, 96, 32, 53, 67, 23, 98, 33, 38, 45, 39, 86, 12, 43, 45]
 ```  
 Напишите программу, которая определяет второй по величине результат в списке.  
+exam_results = [23, 78, 96, 32, 53, 67, 23, 98, 33, 38, 45, 39, 86, 12, 43, 45]
+
+
+
 
 --- 
-"""
